@@ -3,9 +3,9 @@ import {
   ApolloServerPluginLandingPageGraphQLPlayground,
   ApolloServerPluginLandingPageDisabled,
 } from "apollo-server-core";
-import schema from "../../grapqhl/schema";
+import schema from "../../graphql/schema";
 import Cors from "micro-cors";
-import { createContext } from "../../grapqhl/context";
+import { createContext } from "../../graphql/context";
 
 const cors = Cors();
 
