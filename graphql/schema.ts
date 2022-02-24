@@ -20,7 +20,7 @@ export default makeSchema({
     alias: "ContextModule",
     module: join(
       process.cwd(),
-      "src/graphql/context.ts"
+      "graphql/context.ts"
     ) /* https://stackoverflow.com/a/68670795/4111389 */,
   },
   // sourceTypes: {
