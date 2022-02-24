@@ -11,14 +11,17 @@ import Query from "./Query";
 export default makeSchema({
   shouldGenerateArtifacts: true,
   outputs: {
-    typegen: path.join(process.cwd(), "generated/nexus-typegen.ts"),
-    schema: path.join(process.cwd(), "generated/schema.graphql"),
+    typegen: join(process.cwd(), "generated/nexus-typegen.ts"),
+    schema: join(process.cwd(), "generated/schema.graphql"),
   },
 
   contextType: {
     export: "Context",
     alias: "ContextModule",
-    module: require.resolve(path.join(process.cwd(), "graphql/context.ts")),
+    module: join(
+      process.cwd(),
+      "src/graphql/context.ts"
+    ) /* https://stackoverflow.com/a/68670795/4111389 */,
   },
   // sourceTypes: {
   //   modules: [
