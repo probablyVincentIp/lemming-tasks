@@ -3,7 +3,7 @@ import { objectType } from "nexus";
 export default objectType({
   name: "Task",
   definition(t) {
-    t.id("id");
+    t.int("id");
     t.string("title");
     t.nullable.string("description");
     t.int("createdByUserId");
