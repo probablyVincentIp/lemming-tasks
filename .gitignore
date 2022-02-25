@@ -40,4 +40,4 @@ yarn-error.log*
 .env
 dev.db
 prisma/dev.db-journal
-generated
+.generated
