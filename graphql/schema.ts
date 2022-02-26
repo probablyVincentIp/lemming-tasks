@@ -10,10 +10,14 @@ import createProject from "./mutations/createProject";
 import createTag from "./mutations/createTag";
 import createTask from "./mutations/createTask";
 import createUser from "./mutations/createUser";
+import deleteProject from "./mutations/deleteProject";
+import deleteTag from "./mutations/deleteTag";
+import deleteTask from "./mutations/deleteTask";
+import deleteUser from "./mutations/deleteUser";
 import updateProject from "./mutations/updateProject";
 import updateTag from "./mutations/updateTag";
 import updateTask from "./mutations/updateTask";
-import updateUser from "./mutations/updateUser";
+
 import Query from "./Query";
 
 /**
@@ -50,7 +54,10 @@ export default makeSchema({
     updateProject,
     updateTag,
     updateTask,
-    updateUser,
+    deleteProject,
+    deleteTag,
+    deleteTask,
+    deleteUser,
     User,
   ],
 });
