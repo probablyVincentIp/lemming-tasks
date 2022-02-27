@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "ignore": [
+    "node_modules",
+    ".next",
+    ".generated"
+  ],
+  "watch": [
+    "graphql/**/*"
+  ],
+  "ext": "ts"
+}
