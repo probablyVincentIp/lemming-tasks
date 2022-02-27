@@ -1,22 +1,29 @@
-import { extendType, nonNull, stringArg } from "nexus";
+import { extendType, nonNull, stringArg, inputObjectType, arg } from "nexus";
+
+export const createTaskData = inputObjectType({
+  name: "createTaskData",
+  definition(t) {
+    t.string("description");
+    t.nonNull.string("title");
+  },
+});
 
 export default extendType({
   type: "Mutation",
   definition(t) {
     t.field("createTask", {
       type: "Task",
-      args: { name: nonNull(stringArg()) },
-      async resolve(_root, { name }, ctx, _info) {
+      args: { data: nonNull(arg({ type: createTaskData })) },
+      async resolve(_root, { data }, ctx, _info) {
+        const { title, description } = data;
+
         return await ctx.db.task.create({
           data: {
-            title: "foo",
-            createdByUser: {
-              create: { name: "vincent" },
-            },
+            title,
+            description: description ?? undefined,
             creationDate: new Date(),
-            project: {
-              create: { name: "default" },
-            },
+            createdByUserId: 1,
+            projectId: 1,
           },
         });
       },
